@@ -29,7 +29,18 @@ type Participant struct {
 	X float64
 	// Width is the header box width; set during layout.
 	Width float64
+
+	// CreateRow is the row where a `create`d participant first appears, or -1
+	// for a participant whose lifeline starts at the top of the diagram.
+	CreateRow int
+	// DestroyRow is the row of a `destroy` marker, or -1 when the lifeline
+	// runs to the bottom of the diagram.
+	DestroyRow int
 }
+
+// bornAtTop reports whether the lifeline starts with the header at the top.
+// A created participant's header is drawn at its first message instead.
+func (p *Participant) bornAtTop() bool { return p.CreateRow < 0 }
 
 // Message is a single arrow from one participant to another.
 type Message struct {

@@ -152,7 +152,7 @@ The renderer dispatches on the diagram header. Status vs. Mermaid:
 | Type | Header | Notes |
 | --- | --- | --- |
 | Flowchart | `graph` / `flowchart` | 12 shapes, subgraphs, styling, orthogonal edges |
-| Sequence | `sequenceDiagram` | notes, activations, loop/alt/opt frames, autonumber |
+| Sequence | `sequenceDiagram` | notes, activations, loop/alt/opt frames, autonumber, create/destroy lifecycles |
 | Class | `classDiagram` | members, 6 relationship types |
 | State | `stateDiagram-v2` | start/end, composite states |
 | Entity-relationship | `erDiagram` | attributes, crow's-foot cardinality |
@@ -242,7 +242,7 @@ Rendering is fast — roughly 10–50µs per diagram with no external processes.
 
 - [ ] Network-simplex ranking (tighter flowchart layouts)
 - [ ] Spline edge routing
-- [ ] Richer fidelity: class generics/annotations, sequence create/destroy/
+- [ ] Richer fidelity: class generics/annotations, sequence
       highlight, ER attribute keys
 - [ ] More diagram types (architecture-beta, treemap, zenuml)
 - [ ] Toward v1.0: freeze the public API

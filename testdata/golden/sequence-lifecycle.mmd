@@ -1,0 +1,13 @@
+sequenceDiagram
+participant C as Client
+C->>C: prepare
+alt needs worker
+create participant W as Worker
+C->>W: spawn
+W-->>C: ack
+loop retry
+C->>W: ping
+end
+destroy W
+end
+C->>C: done

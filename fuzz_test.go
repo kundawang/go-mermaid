@@ -28,6 +28,7 @@ func FuzzRender(f *testing.F) {
 		"graph TD\nA[[x]] --> B[(y)] --> C{{z}}\nA:::cls\nclassDef cls fill:#f00",
 		"graph TD\nsubgraph one\nA-->B\nend",
 		"sequenceDiagram\nautonumber\nloop x\nA->>B: hi\nend",
+		"sequenceDiagram\nparticipant A\nalt x\ncreate participant W\nA->>W: hi\ndestroy W\nend",
 		"",
 		"graph",
 		"pie\n: :",
